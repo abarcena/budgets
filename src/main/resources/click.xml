@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE click-app PUBLIC "-//Apache Software Foundation//DTD Click Configuration 2.2//EN" "http://click.apache.org/dtds/click-2.3.dtd">
+<click-app charset="UTF-8">
+
+  <pages package="ph.cg.budgets.ui">
+  </pages>
+
+  <mode value="development"/>
+
+</click-app>

@@ -1,0 +1,44 @@
+Click $link to make an Ajax request to the server.
+<div id="result">
+	<!-- // Ajax response will be set here -->
+</div>
+
+<!-- // JavaScript code below -->
+
+<!-- // Import the jQuery library -->
+<script type="text/javascript" src="$context/js/jquery.js"></script>
+
+<!-- // The client-side JavaScript for initiating an Ajax request -->
+<script type="text/javascript">
+	// This example uses jQuery for making Ajax requests:
+	// Register a function that is invoked as soon as the entire DOM has been loaded
+	jQuery(document).ready(function() {
+		// Register a 'click' handler that makes an Ajax request
+		jQuery("#link-id").click(function(event) {
+			// Make ajax request
+			makeRequest();
+
+			// Prevent the default browser behavior of navigating to the link
+			return false;
+		});
+	});
+
+	var makeRequest = function() {
+		// Get a reference to the link
+		var link = jQuery('#link-id');
+
+		// In order for Click to identify the Ajax target, we pass the link ID attribute as request parameters
+		var extraData = link.attr('id') + '=1';
+
+		// The Ajax URL is set to the link 'href' URL which contains all the link default parameters, including it's name/value pair: 'actionLink=link'
+		var url = link.attr('href');
+
+		jQuery.get(url, extraData, function(data) {
+			// 'data' is the response returned by the server
+			// Find the div element with the id "result", and set its content to the server response
+			var res = jQuery("#result")
+
+			res.html("<p>" + data + "</p>");
+		});
+	};
+</script>

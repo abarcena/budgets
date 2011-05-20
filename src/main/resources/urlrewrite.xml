@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE urlrewrite PUBLIC "-//tuckey.org//DTD UrlRewrite 3.1//EN" "http://tuckey.org/res/dtds/urlrewrite3.1.dtd">
+
+<urlrewrite>
+
+    <rule>
+        <from>^/([^p][^a][^g][^e])(.*)\.htm$</from>
+        <set name="rewritten">true</set>
+        <to>/page/$1$2.htm</to>
+    </rule>
+
+    <rule>
+        <condition type="attribute" name="rewritten" operator="notequal">true</condition>
+        <from>^/page/(.*)\.htm$</from>
+        <to type="permanent-redirect">/$1.htm</to>
+    </rule>
+
+</urlrewrite>
